@@ -7,7 +7,6 @@ h = 30
 theta = 0
 W = 100
 L = 80
-
 ecuacion = 2*a*pow(R,3)*(((h*pow(sin(theta),3))/3) -
                           ((R*cos(theta)*pow(sin(theta),3))/3) +
                           ((R*theta)/8) - ((R*sin(4*theta))/32) -
@@ -24,7 +23,6 @@ def biseccion(f, a, b, e):
     :param e: error
     :return:
     '''
-
     while b - a >= e:
         c = (a+b)/2
         if f(c) == 0:
@@ -36,11 +34,13 @@ def biseccion(f, a, b, e):
                 b = c
     return c
 
+
 def f(theta) : return 2*2*pow(12,3)*(((25*pow(sin(theta),3))/3) -
                                                    ((12*cos(theta)*pow(sin(theta),3))/3) +
                                                    ((12*theta)/8) - ((12*sin(4*theta))/32) -
                                                    ((30*theta*cos(theta))/2) +
                                                    ((30*cos(theta)*sin(2*theta))/4)) - 100*80
+
 
 c = biseccion(f, 0, 2, 0.000001)
 print(c)
